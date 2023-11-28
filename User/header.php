@@ -64,41 +64,20 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
-							<li class="nav-item active"><a class="nav-link" href="Index.php">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="About us.php">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="Gallery.php">Gallery</a>
-							<li class="nav-item submenu dropdown">
+						</ul>	
+						<div class="d-flex flex-row-reverse">
+						<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-									aria-haspopup="true" aria-expanded="false">Pages</a>
+									aria-haspopup="true" aria-expanded="false">Welcome,<?php echo $_SESSION['user_name']; ?></a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="Price.php">Pricing</a>
-									<li class="nav-item"><a class="nav-link" href="Games.php">Games</a>
-									<li class="nav-item"><a class="nav-link" href="Elements.php">Elements</a>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-									aria-haspopup="true" aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="Blog.php">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="Single blog.php">Blog Details</a>
+									<!--<li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>-->
+									<li class="nav-item"><a class="nav-link" href="../Logout.php">Logout</a>
 									</li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="Contact.php">Contact</a></li>
-						</ul>				
-					<ul class="nav navbar-nav navbar-right">
-    					<li class="nav-item dropdown">
-        					<a href="#" class="nav-link dropdown-toggle custom-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-								<span class="navbar-text">Welcome,<?php echo $_SESSION['user_name']; ?></span>
-    						</a>
-        					<div class="dropdown-menu" aria-labelledby="userDropdown">
-            					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Profile</button>
-            					<a class="dropdown-item" href="../logout.php">Logout</a>
-        					</div>
-    					</li>
-					</ul>
-
+						</ul>
+						</div>
 					</div>
 				</div>
 			</nav>

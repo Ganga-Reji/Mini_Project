@@ -1,39 +1,48 @@
 <?php
+session_start();
+$conn = mysqli_connect('localhost', 'root', '', 'gruda_db');
 
-$conn = mysqli_connect('localhost','root','','gruda_db');
+// Initialize the error variable
+$errors = [];
 
-if(isset($_POST['submit'])){
+// Check if the user is already logged in
+if (isset($_SESSION['type'])) {
+    if ($_SESSION['type'] == 'user') {
+        header('location: User/Index.php');
+        exit();
+    }
+}
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+if (isset($_POST['submit'])) {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = $_POST['password'];
 
-   $select = " SELECT * FROM USERS WHERE EMAIL_ID = '$email' && PASSWORD = '$pass' ";
-   $result = mysqli_query($conn, $select);
+    // Email and password validation
+    if (empty($email) || empty($password)) {
+        $errors[] = 'Email and password are required.';
+    } else {
+        $password = md5($password);
 
-   if(mysqli_num_rows($result) > 0)
-   {
-      $error[] = 'User already exist!';
-   }
-   else
-   {
-      if($pass != $cpass)
-      {
-          $error[] = 'Password not matched!';
-      }
-      else
-      {
-         $insert = "INSERT INTO users(USERNAME, EMAIL_ID, PASSWORD, USER_TYPE) VALUES('$name','$email','$pass','$user_type')";
-         mysqli_query($conn, $insert);
-         header('location:login.php');
-      }
-   }
+        $select = "SELECT * FROM USERS WHERE EMAIL_ID = '$email' && PASSWORD = '$password'";
+        $result = mysqli_query($conn, $select);
 
-};
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_array($result);
 
-
+            if ($row['USER_TYPE'] == 'admin') {
+                $_SESSION['admin_name'] = $row['name'];
+                $_SESSION['type'] = $row['USER_TYPE'];
+                header('location: Admin/Dashboard.php');
+            } elseif ($row['USER_TYPE'] == 'user') {
+                $_SESSION['user_name'] = $row['USERNAME'];
+                $_SESSION['type'] = $row['USER_TYPE'];
+                header('location: User/Index.php');
+            }
+        } else {
+            $errors[] = 'Incorrect email or password!';
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,9 +52,9 @@ if(isset($_POST['submit'])){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Sign Up Form by Colorlib</title>
+<title>Sign In</title>
 
-<link rel="stylesheet" href="styles/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="style/fonts/material-icon/css/material-design-iconic-font.min.css">
 
 <link rel="stylesheet" href="styles/css/style.css">
 <meta name="robots" content="noindex, follow">
@@ -55,36 +64,25 @@ if(isset($_POST['submit'])){
 <div class="container">
 <div class="signup-content">
 <form method="POST" action="" id="signup-form" class="signup-form">
-<h2>Sign up </h2>
-
-<div class="form-group">
-<input type="text" class="form-input" name="name" id="name" placeholder="Username" />
-</div>
+<h2>Sign in </h2>
+<?php if (count($errors) > 0) : ?>
+                    <div class="error-messages">
+                        <?php foreach ($errors as $error) : ?>
+                            <p><?php echo $error; ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
 <div class="form-group">
 <input type="email" class="form-input" name="email" id="email" placeholder="Email" />
 </div>
 <div class="form-group">
-<input type="text" class="form-input" name="password" id="password" placeholder="Enter Password" />
+<input type="password" class="form-input" name="password" id="password" placeholder="Password" />
 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-</div>
-<div class="form-group">
-<input type="text" class="form-input" name="cpassword" id="password" placeholder="Confirm Password" />
-<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-</div>
-<div class="form-group">
-<select name="user_type">
-         <option value="user">User</option>
-         <option value="admin">Admin</option>
-      </select>
 </div>
 
 <div class="form-group">
-<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
-</div>
-<div class="form-group">
-<input type="submit" name="submit" id="submit" class="form-submit submit" value="Sign up" />
-<a href="login.php" class="submit-link submit">Sign in</a>
+<input type="submit" name="submit" id="submit" class="form-submit submit" value="Sign in" />
+<a href="registration.php" class="submit-link submit">Sign Up</a>
 </div>
 </form>
 </div>

@@ -1,0 +1,42 @@
+const bird = document.getElementById('bird');
+const pipe = document.getElementById('pipe');
+let gravity = 1.5;
+let birdY = 200;
+let velocity = 0;
+
+document.addEventListener('mousedown', jump);  // Use mousedown event for mouse click
+
+function jump() {
+    velocity = -20;
+}
+
+function gameLoop() {
+    velocity += gravity;
+    birdY += velocity;
+
+    if (birdY > 500) {
+        birdY = 500;
+        velocity = 0;
+    }
+
+    bird.style.bottom = birdY + 'px';
+    pipe.style.left = parseInt(getComputedStyle(pipe).left) - 5 + 'px';
+
+    if (parseInt(getComputedStyle(pipe).left) < -100) {
+        pipe.style.left = '100%';
+    }
+
+    if (
+        birdY <= parseInt(getComputedStyle(pipe).height) &&
+        birdY >= 0 &&
+        parseInt(getComputedStyle(pipe).left) <= 50 &&
+        parseInt(getComputedStyle(pipe).left) >= 0
+    ) {
+        alert('Game Over');
+        location.reload();
+    }
+
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();

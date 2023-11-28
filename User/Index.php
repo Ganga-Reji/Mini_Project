@@ -8,26 +8,170 @@
 	<section class="home_banner_area">
 		<div class="banner_inner">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="home_left_img">
-							<img class="img-fluid" src="img/banner/home-left.png" alt="Home left">
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="banner_content">
-							<h2>
+				<div class="row" style="width:fit-content">
+				<div class="d-flex flex-row" style="padding-top:80px">
+ 				 <div class="p-0"><img class="img-fluid" src="img/banner/a.png" style="width:350px"  alt="Home left"></div>
+					<div class="banner_content p-2">
+							<h2 style="padding-top:80px">
 								Explore <br>
 								The World of <br>
 								Indian games
 							</h2>					
 					</div>
-				</div>
+
+					</div>
+					
 			</div>
 		</div>
 	</section>
 	
 	<!--================End Home Banner Area =================-->
+<!--================Games Area =================-->
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<h2>Games</h2>
+						<h1>Games</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center">
+				
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Space invader.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Space invader.html">Bahirakasha Yantram</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Ping-Pong.png" alt="">
+						<div class="upcoming_title" >
+							<h3><a href="Games/Ping-Pong game.html">Gend Yudh</a></h3>
+						</div>
+					</div>
+				</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Flappy Bird.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Flappy Bird game.html">Sunehri Maina</a></h3>
+						</div>
+					</div>
+				</div>
+				
+<!--				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Flappy Bird.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Flappy Bird game.html">Flappy Bird</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Hex Racing.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Hex Racing game.html">Hex Racing</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Mrio.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Mario game.html">Mario</a></h3>
+						</div>
+					</div>		
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Pacman.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Pacman game.html">Pacman</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Ping-Pong.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Ping-Pong game.html">Ping-Pong</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Quiz.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Quiz game.html">Quiz</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Snake.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Snake game.html">Snake</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Bounce.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Arkanoid Bounce game.html">Arkanoid Bounce</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Snake V2.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/SnakeV2 game.html">Snake V2</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Space invader.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Space invader.html">Space invader</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Tetris.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Tetris game.html">Tetris</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Dino.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Dino game.html">Dino</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="Games/IMAGES/icons/Type Master.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="Games/Type Master game.html">Type Master</a></h3>
+						</div>
+					</div>
+				</div>
+				-->
+			</div>
+		</div>
+	
 	<!--================Games Area =================-->
 
 	<!--================First Upcoming Games Area =================-->
@@ -230,143 +374,7 @@ fetchTopGames(currentPage);
 	<!--================End Upcoming Games Area =================-->
 
 							
-	<!--================Games Area =================-->
-	<section class="upcoming_games_area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title">
-						<h2>Games</h2>
-						<h1>Games</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row text-center">
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/2048.png" alt="2048">
-						<div class="upcoming_title">
-							<h3><a href="Games/2048 game.html">MathMantra</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Space invader.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Space invader.html">Bahirakasha Yantram</a></h3>
-						</div>
-					</div>
-				</div>
-				
-<!--				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Flappy Bird.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Flappy Bird game.html">Flappy Bird</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Hex Racing.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Hex Racing game.html">Hex Racing</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Mrio.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Mario game.html">Mario</a></h3>
-						</div>
-					</div>		
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Pacman.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Pacman game.html">Pacman</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Ping-Pong.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Ping-Pong game.html">Ping-Pong</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Quiz.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Quiz game.html">Quiz</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Snake.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Snake game.html">Snake</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Bounce.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Arkanoid Bounce game.html">Arkanoid Bounce</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Snake V2.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/SnakeV2 game.html">Snake V2</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Space invader.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Space invader.html">Space invader</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Tetris.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Tetris game.html">Tetris</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Dino.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Dino game.html">Dino</a></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="new_games_item">
-						<img src="Games/IMAGES/icons/Type Master.png" alt="">
-						<div class="upcoming_title">
-							<h3><a href="Games/Type Master game.html">Type Master</a></h3>
-						</div>
-					</div>
-				</div>
-				-->
-			</div>
-		</div>
-	</section>
+	
 
 
 
@@ -375,7 +383,7 @@ fetchTopGames(currentPage);
 
 
 	<!--========== Start Testimonials Area ==================-->
-	<section class="testimonials_area section_gap">
+	<!--<section class="testimonials_area section_gap">
 		<div class="container">
 			<div class="testi_slider owl-carousel">
 				<div class="testi_item">
@@ -437,12 +445,12 @@ fetchTopGames(currentPage);
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================ End Testimonials Area ================-->
 
 
 	<!--================ Start Blog Area ================-->
-	<section class="blog_area">
+	<!-- <section class="blog_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -509,11 +517,11 @@ fetchTopGames(currentPage);
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================ End Blog Area ================-->
-
-	<!--================ Start Newsletter Area ================-->
-	<section class="newsletter_area">
+	
+	<!-- ================ Start Newsletter Area ================-->
+	<!--<section class="newsletter_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
@@ -540,7 +548,7 @@ fetchTopGames(currentPage);
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================ End Newsletter Area ================-->
 
 	<!--================Footer Area =================-->
@@ -550,48 +558,16 @@ fetchTopGames(currentPage);
 				<div class="col-lg-3 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h4>About Farfly</h4>
-						</div>
-						<ul>
-							<li><a href="#"></a>For Business</a></li><a href="#">
-								<li><a href="#"></a>Premium Plans
-							</a></li>
-							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a>How it Works</a></li>
-							<li><a href="#"></a>Farfly Blog</a></li>
+							<h4></a>About Gruda</h4>
+							<br>
+							<ul>
+							<li><a href="Aboutus.php">About Us</a></li>
 						</ul>
+						</div>
+						
 					</aside>
 				</div>
-				<div class="col-lg-3 col-sm-6">
-					<aside class="f_widget ab_widget">
-						<div class="f_title">
-							<h4>Company</h4>
-						</div>
-						<ul>
-							<li><a href="#"></a>Product Tour</a></li><a href="#">
-								<li><a href="#"></a>Pricing
-							</a></li>
-							<li><a href="#"></a>Founding Members</a></li>
-							<li><a href="#"></a>Case Studies</a></li>
-							<li><a href="#"></a>Product Updates</a></li>
-						</ul>
-					</aside>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<aside class="f_widget ab_widget">
-						<div class="f_title">
-							<h4>Support</h4>
-						</div>
-						<ul>
-							<li><a href="#"></a>Documentation</a></li><a href="#">
-								<li><a href="#"></a>Data Securiry
-							</a></li>
-							<li><a href="#"></a>Site Performance</a></li>
-							<li><a href="#"></a>Action Plan</a></li>
-							<li><a href="#"></a>Resources</a></li>
-						</ul>
-					</aside>
-				</div>
+				
 				<div class="col-lg-3 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
@@ -601,23 +577,23 @@ fetchTopGames(currentPage);
 							<li><a href="#"></a>Terms and conditions</a></li><a href="#">
 								<li><a href="#"></a>Privacy Policy
 							</a></li>
-							<li><a href="#"></a>Cookie Information</a></li>
-							<li><a href="#"></a>Opt - Out</a></li>
+							
 						</ul>
 					</aside>
 				</div>
 			</div>
+			
 			<div class="row single-footer-widget">
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="copy_right_text">
-						<p>
+						<p> 
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
+							<!--Copyright &copy;
 							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
 					         made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-								href="https://github.com/Richu-Antony/Gruda-Gaming" target="_blank">Richu Antony</a>
+								href="https://github.com/Richu-Antony/Gruda-Gaming" target="_blank">Richu Antony</a> -->
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
+						<!--</p>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12">
@@ -630,7 +606,7 @@ fetchTopGames(currentPage);
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer> 
 	<!--================End Footer Area =================-->
 
 	<!-- Optional JavaScript -->

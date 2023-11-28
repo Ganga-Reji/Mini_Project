@@ -1,44 +1,50 @@
 <?php
+$conn = mysqli_connect('localhost', 'root', '', 'gruda_db');
 
-session_start();
-$conn = mysqli_connect('localhost','root','','gruda_db');
-// Check if the user is logged in (if the session variable is set)
-if(isset($_SESSION['type'])){
-if ($_SESSION['type'] == 'user') {
-      header('location:User/Index.php');
-    exit();
+// Initialize the error variable
+$errors = [];
+
+if (isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $user_type = $_POST['user_type'];
+
+    // Password length validation
+    if (strlen($password) < 8 || strlen($password) > 10) {
+        $errors[] = 'Password must be between 8 and 10 characters.';
+    }
+
+    // Email format validation
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Invalid email format.';
+    }
+
+    // Username alphanumeric characters validation
+    if (!preg_match('/^[a-zA-Z0-9]*$/', $name)) {
+        $errors[] = 'Username must contain only letters and numbers.';
+    }
+
+    $select = "SELECT * FROM users WHERE EMAIL_ID = '$email'";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $errors[] = 'User already exists.';
+    }
+
+    if (count($errors) === 0) {
+        if ($password != $cpassword) {
+            $errors[] = 'Passwords do not match.';
+        } else {
+            $password = md5($password);
+
+            $insert = "INSERT INTO users(USERNAME, EMAIL_ID, PASSWORD, USER_TYPE) VALUES('$name', '$email', '$password', '$user_type')";
+            mysqli_query($conn, $insert);
+            header('location: login.php');
+        }
+    }
 }
-}
-if(isset($_POST['submit']))
-{
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-
-   $select = " SELECT * FROM USERS WHERE EMAIL_ID = '$email' && PASSWORD = '$pass' ";
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0)
-   {
-      $row = mysqli_fetch_array($result);
-      if($row['USER_TYPE'] == 'admin')
-      {
-         $_SESSION['admin_name'] = $row['name'];
-         $_SESSION['type'] = $row['USER_TYPE'];
-         header('location:Admin/Dashboard.php');
-      }
-      elseif($row['USER_TYPE'] == 'user')
-      {
-         $_SESSION['user_name'] = $row['USERNAME'];
-         $_SESSION['type'] = $row['USER_TYPE'];
-         header('location:User/Index.php');
-      }
-   }
-   else
-   {
-      $error[] = 'Incorrect email or password!';
-   }
-
-};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,9 +54,9 @@ if(isset($_POST['submit']))
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Sign In</title>
+<title>Sign Up Form by Colorlib</title>
 
-<link rel="stylesheet" href="style/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="styles/fonts/material-icon/css/material-design-iconic-font.min.css">
 
 <link rel="stylesheet" href="styles/css/style.css">
 <meta name="robots" content="noindex, follow">
@@ -60,21 +66,35 @@ if(isset($_POST['submit']))
 <div class="container">
 <div class="signup-content">
 <form method="POST" action="" id="signup-form" class="signup-form">
-<h2>Sign in </h2>
+<h2>Sign up </h2>
+<?php if (count($errors) > 0) : ?>
+                    <div class="error-messages">
+                        <?php foreach ($errors as $error) : ?>
+                            <p><?php echo $error; ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+<div class="form-group">
+<input type="text" class="form-input" name="name" id="name" placeholder="Username" />
+</div>
 <div class="form-group">
 <input type="email" class="form-input" name="email" id="email" placeholder="Email" />
 </div>
 <div class="form-group">
-<input type="text" class="form-input" name="password" id="password" placeholder="Password" />
+<input type="password" class="form-input" name="password" id="password" placeholder="Enter Password" />
 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
 </div>
 <div class="form-group">
-<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
+<input type="password" class="form-input" name="cpassword" id="password" placeholder="Confirm Password" />
+<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
 </div>
 <div class="form-group">
-<input type="submit" name="submit" id="submit" class="form-submit submit" value="Sign in" />
-<a href="registration.php" class="submit-link submit">Sign Up</a>
+ 
+</div>
+
+<div class="form-group">
+<input type="submit" name="submit" id="submit" class="form-submit submit" value="Sign up" />
+<a href="login.php" class="submit-link submit">Sign in</a>
 </div>
 </form>
 </div>
@@ -95,5 +115,5 @@ if(isset($_POST['submit']))
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"816624391eeb84c2","version":"2023.8.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
 </body>
 
-<!-- Mirrored from colorlib.com/etc/regform/colorlib-regform-9/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Oct 2023 06:52:50 GMT -->
+
 </html>
